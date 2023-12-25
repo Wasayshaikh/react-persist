@@ -18,6 +18,6 @@
        line-height: 1.75rem;
     }
     .nav-link{
-        @apply p-4 block hover:bg-[#b9b9b9]
+        @apply p-4 block 
     }
 }
