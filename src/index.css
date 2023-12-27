@@ -1,23 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
-    .nav-container{
-       @apply flex justify-between items-center bg-[#f2f2f2] shadow-md shadow-gray-300 
+    .nav-container {
+        @apply flex justify-between items-center bg-[#f2f2f2] shadow-md shadow-gray-300
     }
-    .nav-left{
+
+    .nav-left {
         @apply flex items-center
     }
-    .nav-right{
+
+    .nav-right {
         @apply flex
     }
-    .nav-heading{
+
+    .nav-heading {
         @apply text-xl px-4
     }
-    .nav-item{
-       line-height: 1.75rem;
+
+    .nav-item {
+        line-height: 1.75rem;
     }
-    .nav-link{
-        @apply p-4 block 
+
+    .nav-link {
+        @apply p-4 block cursor-pointer
+    }
+
+    .login-form input {
+        @apply text-black rounded-sm w-full my-2 h-8 outline-none bg-[#ffffff] border-2 border-gray-200
     }
 }
