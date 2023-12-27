@@ -1,30 +1,11 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { AddPost, getPosts } from '../redux/Slices/PostSlice';
-import { authUser, login, logout } from '../redux/Slices/AuthSlice';
-import { nanoid } from '@reduxjs/toolkit';
+import { getPosts } from '../redux/Slices/PostSlice';
 
 const Home = () => {
     const posts = useSelector(getPosts);
-    const auth = useSelector(authUser);
-    const dispatch = useDispatch();
-    const handleClick = ()=> {
-        
-        dispatch(login());
-        dispatch(AddPost({id:nanoid(),title:"asdf", body:"ASdf"}))
-        
 
-    }
-    const logouts = ()=> {
-        
-        dispatch(logout());
-        
-
-    }
-    
-    console.log(auth)
-    console.log(posts)
     const postComponent: React.ReactNode = posts.map(post => (
         <div className="p-3" key={post.id}>
             <Link to={`/post/${post.id}`}>
@@ -42,12 +23,7 @@ const Home = () => {
     ))
     return (
         <div className="container lg:max-w-[1200px] m-auto p-4">
-            <button onClick={()=>{
-                handleClick()
-            }}>Click </button>
-             <button onClick={()=>{
-                logouts()
-            }}>logout </button>
+            
             {postComponent}
         </div>
     )
